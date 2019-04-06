@@ -1,9 +1,4 @@
 {% for location in locations %}
-    {% if loop.last and (link_last_element is not defined or not link_last_element) %}
-        {{ ez_content_name(location.contentInfo) }}
-    {% else %}
-        <a
-        href="{{ path('_ezpublishLocation', {'locationId': location.id}) }}">{{ ez_content_name(location.contentInfo) }}</a>{% if loop.last is same as(false) %} /{% endif %}
-    {% endif %}
+    <a
+    href="{{ path('_ezpublishLocation', {'locationId': location.id}) }}" target="_blank" title="{{ ez_content_name(location.contentInfo) }}">{{ ez_content_name(location.contentInfo) }}</a>{% if loop.last is same as(false) %} /{% endif %}
 {% endfor %}
-
